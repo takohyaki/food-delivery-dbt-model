@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: csv_source
+    tables:
+      - name: orders
+        identifier: Orders.csv
+        loaded_at_field: loaded_at
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
+          - name: order_date
+          - name: rdbms_id
+            tests:
+              - not_null
+          - name: country_name
+          - name: vendor_id
+            tests:
+              - not_null
+          - name: customer_id
+          - name: gmv_local
+            tests:
+              - dbt_utils.expression_is_true:
+                  expression: "gmv_local >= 0"
+          - name: is_voucher_used
+            tests:
+              - boolean_test
+          - name: is_successful_order
+            tests:
+              - boolean_test
+
+  - name: vendors
+        identifier: Vendors.csv
+        loaded_at_field: loaded_at
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: rdbms_id
+            tests:
+              - not_null
+          - name: country_name
+            tests:
+              - not_null
+          - name: is_active
+            tests:
+              - boolean_test
+          - name: vendor_name
+            tests:
+              - not_null
+          - name: budget
+            tests:
+              - dbt_utils.expression_is_true:
+                  expression: "budget >= 0"
+          - name: chain_id

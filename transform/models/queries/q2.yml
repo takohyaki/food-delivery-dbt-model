@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: taiwan_gmv_customer_count
+    description: This model calculates the total Gross Merchandise Volume (GMV) and customer count for each Taiwanese vendor from the `orders` and `vendors` source.
+    columns:
+      - name: vendor_name
+        description: The name of the Taiwanese vendor.
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_count
+        description: The count of distinct customers for each Taiwanese vendor.
+        tests:
+          - not_null
+
+      - name: total_gmv
+        description: The total Gross Merchandise Volume for each Taiwanese vendor.
+        tests:
+          - not_null
+          - range_total_gmv

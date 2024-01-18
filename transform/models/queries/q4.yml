@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: top_two_vendors_per_country_per_year
+    description: Identifies the top two vendors per country for each year, ranked by their total Gross Merchandise Volume (GMV)
+    columns:
+      - name: year
+        description: The year of the vendor's GMV aggregation, formatted as a timestamp for the first day of the year
+        tests:
+          - not_null
+
+      - name: country_name
+        description: The name of the country where the vendor operates
+        tests:
+          - not_null
+
+      - name: vendor_name
+        description: The name of the vendor
+        tests:
+          - not_null
+
+      - name: total_gmv
+        description: The total Gross Merchandise Volume (GMV) for the vendor in that year
+        tests:
+          - not_null
+          - range_total_gmv
+
+      - name: rank
+        description: The rank of the vendor in their country based on GMV for that year, with a maximum value of 2
+        tests:
+          - not_null
+          - consistency_rank

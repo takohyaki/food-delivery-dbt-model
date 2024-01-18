@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: top_vendor_by_country
+    description: Identifies the top active vendor by Gross Merchandise Volume (GMV) in each country from the `orders` and `vendors` source.
+    columns:
+      - name: country_name
+        description: The name of the country. 
+        tests:
+          - not_null
+          - unique
+
+      - name: vendor_name
+        description: The name of the top vendor in the country.
+        tests:
+          - not_null
+
+      - name: total_gmv
+        description: The total Gross Merchandise Volume for the top vendor in the country. 
+        tests:
+          - not_null
+          - range_total_gmv
+
+      - name: rank
+        description: The rank of the vendor based on the total GMV within the country. 
+        tests:
+          - not_null

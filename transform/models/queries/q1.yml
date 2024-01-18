@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: total_gmv
+    description: Aggregates the total Gross Merchandise Volume (GMV) for each country from the `orders` source
+    columns:
+      - name: country_name
+        description: The name of the country.
+        tests:
+          - not_null
+          - unique
+
+      - name: total_gmv
+        description: The total Gross Merchandise Volume (GMV) for the country.
+        tests:
+          - not_null
+          - range_total_gmv
