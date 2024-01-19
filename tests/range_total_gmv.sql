@@ -2,4 +2,4 @@
 SELECT
     *
 FROM {{ model }}
-WHERE total_gmv < 0
+WHERE total_gmv >= 0

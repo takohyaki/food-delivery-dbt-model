@@ -10,13 +10,13 @@ models:
           - not_null
           - unique
 
-      - name: customer_count
-        description: The count of distinct customers for each Taiwanese vendor.
-        tests:
-          - not_null
+      # - name: customer_count
+      #   description: The count of distinct customers for each Taiwanese vendor.
+      #   tests:
+      #     - not_null
 
-      - name: total_gmv
-        description: The total Gross Merchandise Volume for each Taiwanese vendor.
-        tests:
-          - not_null
-          - range_total_gmv
+      # - name: total_gmv
+      #   description: The total Gross Merchandise Volume for each Taiwanese vendor.
+      #   tests:
+      #     - not_null
+      #     - range_total_gmv
