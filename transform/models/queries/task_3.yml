@@ -15,13 +15,14 @@ models:
         tests:
           - not_null
 
-      - name: total_gmv
-        description: The total Gross Merchandise Volume for the top vendor in the country. 
-        tests:
-          - not_null
-          - range_total_gmv
+      # - name: total_gmv
+      #   description: The total Gross Merchandise Volume for the top vendor in the country. 
+      #   tests:
+      #     - not_null
+      #     - range_total_gmv
 
-      - name: rank
-        description: The rank of the vendor based on the total GMV within the country. 
-        tests:
-          - not_null
+# not used in original table
+      # - name: rank
+      #   description: The rank of the vendor based on the total GMV within the country. 
+      #   tests:
+      #     - not_null

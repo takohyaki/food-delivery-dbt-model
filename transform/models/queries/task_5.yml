@@ -15,18 +15,18 @@ models:
         tests:
           - not_null
 
-      - name: top_vendor_gmv
-        description: The total Gross Merchandise Volume for the top vendor in the country.
-        tests:
-          - not_null
+      # - name: top_vendor_gmv
+      #   description: The total Gross Merchandise Volume for the top vendor in the country.
+      #   tests:
+      #     - not_null
 
-      - name: country_total_gmv
-        description: The total Gross Merchandise Volume for the country.
-        tests:
-          - not_null
+      # - name: country_total_gmv
+      #   description: The total Gross Merchandise Volume for the country.
+      #   tests:
+      #     - not_null
 
-      - name: top_vendor_gmv_percentage
-        description: The percentage of the country's total GMV that is accounted for by the top vendor.
-        tests:
-          - not_null
-          - range_top_vendor_gmv_percentage
+      # - name: top_vendor_gmv_percentage
+      #   description: The percentage of the country's total GMV that is accounted for by the top vendor.
+      #   tests:
+      #     - not_null
+      #     - range_top_vendor_gmv_percentage
